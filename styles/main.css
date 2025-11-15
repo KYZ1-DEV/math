@@ -1,9 +1,11 @@
+/* ===== FONT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
     font-family: 'Inter', sans-serif;
 }
 
+/* ===== ANIMATIONS ===== */
 .fade-in {
     animation: fadeIn 0.3s ease-in-out;
 }
@@ -22,10 +24,12 @@
     to { transform: scale(1); opacity: 1; }
 }
 
+/* ===== PROGRESS BAR ===== */
 .progress-bar {
     transition: width 1s linear;
 }
 
+/* ===== QUIZ CHOICE COLORS ===== */
 .choice-correct {
     background-color: #10b981 !important;
     color: white !important;
@@ -39,4 +43,31 @@
 .hint-used {
     opacity: 0.5;
     pointer-events: none;
+}
+
+/* ===============================
+   DARK MODE SUPPORT (PENTING!)
+   =============================== */
+
+/* Jika kamu butuh styling khusus untuk dark mode,
+   semuanya harus berada dalam .dark {}
+   supaya TIDAK tertimpa oleh prefers-color-scheme */
+.dark {
+    /* contoh override dasar */
+    color-scheme: dark;
+}
+
+/* Contoh: jika body punya background cerah, override di dark mode */
+.dark body {
+    background-color: #0f172a; /* dark navy */
+    color: #f8fafc;
+}
+
+/* Contoh dark mode pilihan benar/salah (opsional) */
+.dark .choice-correct {
+    background-color: #059669 !important;
+}
+
+.dark .choice-incorrect {
+    background-color: #dc2626 !important;
 }
