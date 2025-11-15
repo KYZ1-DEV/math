@@ -3,13 +3,14 @@ import { saveTheme, loadTheme as loadStoredTheme } from './storage.js';
 const themes = ['light', 'dark', 'auto'];
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Listener harus unik, TIDAK didefinisikan ulang
 function handleSystemChange() {
     applyAutoTheme();
 }
 
 function applyAutoTheme() {
-    document.documentElement.classList.toggle('dark', prefersDark.matches);
+    const dark = prefersDark.matches;
+    document.documentElement.classList.toggle('dark', dark);
+    document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
 }
 
 export function loadTheme() {
@@ -22,17 +23,16 @@ export function setTheme(theme) {
 
     saveTheme(theme);
 
-    // Putuskan mode auto dulu (hapus listener)
+    // Matikan listener dulu
     prefersDark.removeEventListener('change', handleSystemChange);
 
     if (theme === 'auto') {
         applyAutoTheme();
-        // Pasang listener untuk mengikuti sistem
         prefersDark.addEventListener('change', handleSystemChange);
     } else {
-        // Mode manual override sistem
         const isDark = theme === 'dark';
         document.documentElement.classList.toggle('dark', isDark);
+        document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';
     }
 }
 
