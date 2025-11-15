@@ -32,8 +32,8 @@ export async function setupModal(container, setScreen, state) {
                 </div>
 
                 <!-- Content -->
-                <div class="p-6 overflow-y-auto">
-                    <form id="setup-form" class="space-y-6">
+                <div class="p-6">
+                    <form id="setup-form" class="space-y-6 overflow-y-auto">
                         <!-- Level Selection -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
