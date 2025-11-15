@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="id" class="h-full">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Have Fun & Learning – Math Skill Builder</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-          :root {
-            color-scheme: light;
-          }
-          html.dark {
-            color-scheme: dark;
-          }
-        </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Have Fun & Learning – Math Skill Builder</title>
 
-    <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
-    <link rel="stylesheet" href="styles/main.css">
+  <!-- Load theme BEFORE Tailwind CDN -->
+  <script type="module">
+    import { loadTheme } from './js/core/themeManager.js';
+    loadTheme();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body class="h-full bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-    <div id="app" class="min-h-full"></div>
-    <script type="module" src="js/app.js"></script>
+  <div id="app" class="min-h-full"></div>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>
