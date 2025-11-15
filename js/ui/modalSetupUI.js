@@ -1,4 +1,4 @@
-import { generateQuestion } from '../core/questionGenerator.js';
+// import { generateQuestion } from '../core/questionGenerator.js';
 
 let levelsConfig = {};
 
