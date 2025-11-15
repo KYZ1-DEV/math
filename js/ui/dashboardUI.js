@@ -60,5 +60,5 @@ export function showDashboard(container, setScreen) {
     // Event listeners
     container.querySelector('#start-btn').addEventListener('click', () => setScreen('setup'));
     container.querySelector('#stats-btn').addEventListener('click', () => setScreen('stats'));
-    container.querySelector('#theme-btn').addEventListener('click', toggleTheme);
+    // container.querySelector('#theme-btn').addEventListener('click', toggleTheme);
 }
