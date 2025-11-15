@@ -1,0 +1,26 @@
+{
+  "easy": {
+    "operators": ["+", "-"],
+    "numberRange": [1, 10],
+    "timePerQuestion": 30,
+    "questionsCount": 10
+  },
+  "medium": {
+    "operators": ["+", "-", "*", "/"],
+    "numberRange": [1, 20],
+    "timePerQuestion": 25,
+    "questionsCount": 15
+  },
+  "hard": {
+    "operators": ["+", "-", "", "/", "*", "%"],
+    "numberRange": [1, 100],
+    "timePerQuestion": 20,
+    "questionsCount": 20
+  },
+  "custom": {
+    "operators": ["+", "-", "*", "/"],
+    "numberRange": [1, 10],
+    "timePerQuestion": 30,
+    "questionsCount": 10
+  }
+}
