@@ -24,7 +24,7 @@ export async function setupModal(container, setScreen, state) {
     
     container.innerHTML = `
         <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-hidden scale-in">
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-scroll scale-in">
                 <!-- Header -->
                 <div class="p-6 border-b border-gray-200 dark:border-gray-700">
                     <h2 class="text-2xl font-bold text-gray-800 dark:text-white">Pengaturan Permainan</h2>
@@ -32,8 +32,8 @@ export async function setupModal(container, setScreen, state) {
                 </div>
 
                 <!-- Content -->
-                <div class="p-6">
-                    <form id="setup-form" class="space-y-6 overflow-y-auto">
+                <div class="p-6 overflow-y-auto">
+                    <form id="setup-form" class="space-y-6">
                         <!-- Level Selection -->
                         <div>
                             <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
