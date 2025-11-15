@@ -12,7 +12,7 @@ export function showDashboard(container, setScreen) {
                 <!-- Header -->
                 <div class="text-center">
                     <h1 class="text-4xl font-bold text-gray-800 dark:text-white mb-2">
-                        🌱 Fun & Learn
+                        🌱 Have Fun & Learn
                     </h1>
                     <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
                         Math Skill Builder
