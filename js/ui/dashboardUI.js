@@ -1,5 +1,6 @@
 import { toggleTheme } from '../core/themeManager.js';
-import { loadStats, getAccuracy } from '../core/scoring.js';
+import { getAccuracy } from '../core/scoring.js';
+import { loadStats } from '../core/storage.js';
 
 export function showDashboard(container, setScreen) {
     const stats = loadStats();

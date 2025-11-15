@@ -1,5 +1,5 @@
-import { saveStats, updateStats, saveLeaderboardEntry } from '../core/scoring.js';
-import { loadStats, saveStats as saveStatsToStorage } from '../core/storage.js';
+import {updateStats} from '../core/scoring.js';
+import { loadStats, saveStats as saveStatsToStorage, saveLeaderboardEntry  } from '../core/storage.js';
 
 export function showResult(container, setScreen, state) {
     const { gameState } = state;
