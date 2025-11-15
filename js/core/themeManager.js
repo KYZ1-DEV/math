@@ -3,13 +3,13 @@ import { saveTheme, loadTheme as loadStoredTheme } from './storage.js';
 const themes = ['light', 'dark', 'auto'];
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Update DOM berdasarkan preferensi sistem (khusus mode auto)
+// Listener harus unik, TIDAK didefinisikan ulang
+function handleSystemChange() {
+    applyAutoTheme();
+}
+
 function applyAutoTheme() {
-    if (prefersDark.matches) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
+    document.documentElement.classList.toggle('dark', prefersDark.matches);
 }
 
 export function loadTheme() {
@@ -22,17 +22,17 @@ export function setTheme(theme) {
 
     saveTheme(theme);
 
-    // Hapus listener terlebih dahulu (mencegah listener dobel)
-    prefersDark.removeEventListener('change', applyAutoTheme);
+    // Putuskan mode auto dulu (hapus listener)
+    prefersDark.removeEventListener('change', handleSystemChange);
 
     if (theme === 'auto') {
-        applyAutoTheme(); 
-        // Pasang lagi listener untuk memantau perubahan sistem
-        prefersDark.addEventListener('change', applyAutoTheme);
-    } 
-    else {
-        // Mode manual
-        document.documentElement.classList.toggle('dark', theme === 'dark');
+        applyAutoTheme();
+        // Pasang listener untuk mengikuti sistem
+        prefersDark.addEventListener('change', handleSystemChange);
+    } else {
+        // Mode manual override sistem
+        const isDark = theme === 'dark';
+        document.documentElement.classList.toggle('dark', isDark);
     }
 }
 
