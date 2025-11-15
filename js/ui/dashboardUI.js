@@ -44,9 +44,9 @@ export function showDashboard(container, setScreen) {
                         📊 Lihat Statistik
                     </button>
                     
-                    <button id="theme-btn" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
-                        🌙 Ganti Tema
-                    </button>
+                    // <button id="theme-btn" class="w-full bg-gray-500 hover:bg-gray-600 text-white font-bold py-4 px-6 rounded-xl transition-all duration-200 transform hover:scale-105 shadow-lg">
+                    //     🌙 Ganti Tema
+                    // </button>
                 </div>
 
                 <!-- Footer -->
